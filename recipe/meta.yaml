@@ -1,5 +1,5 @@
 {% set name = "mpython-core" %}
-{% set version = "25.4a3" %}
+{% set version = "25.4rc1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mpython_core-{{ version }}.tar.gz
-  sha256: f0832788c2232d5d08cf873b757e1f64469f164c118b798a60662b33707fe887
+  sha256: f89aae52c599affeb706fe007dfe70ea58b5f4081de80e3af24c6560a90ce3e4
 
 build:
   noarch: python
