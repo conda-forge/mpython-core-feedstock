@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: mpython-core
-  version: "26.11"
+  version: "26.11.1"
 
 package:
   name: mpython-core
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/mpython_core-${{ version }}.tar.gz
-  sha256: a762dd586d5cf397f0d7b3a0314b1aec38b8d2647592ff99c7b0d82eed9bb43e
+  sha256: 40c8217cab9761efca4e9ff8771d1e2308ff714e6369c4b2c5f545fa2c57c120
 
 build:
   number: 0
