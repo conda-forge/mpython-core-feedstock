@@ -1,0 +1,53 @@
+schema_version: 1
+
+context:
+  name: mpython-core
+  version: "26.11"
+
+package:
+  name: mpython-core
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/mpython_core-${{ version }}.tar.gz
+  sha256: a762dd586d5cf397f0d7b3a0314b1aec38b8d2647592ff99c7b0d82eed9bb43e
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=61.0
+    - wheel
+    - pip
+  run:
+    - python >=${{ python_min }},<3.14
+    - numpy
+
+tests:
+  - python:
+      imports:
+        - mpython
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - python -c "from mpython import Cell; print(Cell.from_any([[1, 2], [3, 4]]))"
+
+about:
+  homepage: https://github.com/MPython-Package-Factory/mpython-core
+  summary: Core Python elements for wrapped MPython packages.
+  license: GPL-2.0-only
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - larsoner
+    - johmedr
