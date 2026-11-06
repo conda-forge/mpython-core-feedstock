@@ -1,13 +1,13 @@
 {% set name = "mpython-core" %}
-{% set version = "25.4rc1" %}
+{% set version = "26.11" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mpython_core-{{ version }}.tar.gz
-  sha256: f89aae52c599affeb706fe007dfe70ea58b5f4081de80e3af24c6560a90ce3e4
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/mpython_core-{{ version }}.tar.gz
+  sha256: a762dd586d5cf397f0d7b3a0314b1aec38b8d2647592ff99c7b0d82eed9bb43e
 
 build:
   noarch: python
